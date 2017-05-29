@@ -1,0 +1,26 @@
+body{
+    /*background-image: url(https://media2.giphy.com/media/dI3D3BWfDub0Q/200.gif);*/
+    background-image: url(https://media2.giphy.com/media/dI3D3BWfDub0Q/giphy.gif);
+    background-repeat: no-repeat;
+    background-size: cover; 
+    color: white;
+    text-align: center;
+}
+
+.giFrame{
+    float: left;
+    height: 200px;
+    width: 200px;
+    margin: 20px;
+}
+
+
+@media only screen and (max-device-width : 736px)  
+{
+ .giFrame{
+    float: left;
+    height: 100px;
+    width: 100px;
+    margin: 10px;
+}   
+}
