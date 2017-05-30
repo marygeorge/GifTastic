@@ -1,26 +1,43 @@
 body{
-    /*background-image: url(https://media2.giphy.com/media/dI3D3BWfDub0Q/200.gif);*/
-    background-image: url(https://media2.giphy.com/media/dI3D3BWfDub0Q/giphy.gif);
+    background-image: url(https://media4.giphy.com/media/dI3D3BWfDub0Q/giphy.gif);
     background-repeat: no-repeat;
     background-size: cover; 
-    color: white;
+    /*color: black;*/
     text-align: center;
+    
 }
-
+h1{
+    font-family: 'Diplomata', cursive;
+}
 .giFrame{
     float: left;
     height: 200px;
     width: 200px;
     margin: 20px;
 }
+.gifItem{
+    height: 200px;
+    width: 200px;
+   
+}
+.gif{
+    margin: 5px;
+    font-family: 'Caveat', cursive;
+    font-size: 20px;
+    font-weight: bold;
+}
 
 
 @media only screen and (max-device-width : 736px)  
 {
- .giFrame{
-    float: left;
-    height: 100px;
-    width: 100px;
-    margin: 10px;
-}   
+    .giFrame{
+    height: 90px;
+    width: 90px;
+    margin: 2px;
+}
+ .gifItem{
+    height: 75px;
+    width: 75px;
+   
+}
 }

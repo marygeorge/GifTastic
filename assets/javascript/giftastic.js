@@ -1,10 +1,10 @@
-      // Initial array of gifs
+      // Initial array of gifs topic-emotions and anything else
       var gifs = ["Sad", "Happy", "Ecstatic", "Joy"];
       var gifDetails=$("<div>");
       gifDetails.addClass("itemDetails-div");
        $('body').append(gifDetails);
-     //$('html').css("background-image", 'url(https://giphy.com/embed/dI3D3BWfDub0Q)'); 
-      // to display the first 10 gif elements
+     
+      // to display the  gif elements
       function displaygifInfo() 
       {
         var item = $(this).attr("data-name");
@@ -16,21 +16,18 @@
           }).done(function(response) {
           //  console.log(JSON.stringify(response));
               $(".itemDetails-div").empty();
-              for(var i=0;i<response.data.length;i++)
+              //response.data.length
+              for(var i=0;i<10;i++)
               {
                 console.log(response.data[i].images.fixed_height.url);
                 var newDiv=$('<div>')
                 newDiv.addClass("giFrame")
-                //var newFrame=$("<embed>");
-                //var newFrame=$("<iframe>");
                 var newFrame=$("<img>");
                 newFrame.addClass("gifItem")
-               // newFrame.attr("src",response.data[i].embed_url);
                 newFrame.attr("data-animate",response.data[i].images.original.url);
                 newFrame.attr("data-still",response.data[i].images.original_still.url);
                 newFrame.attr("src",response.data[i].images.original_still.url);
-                //newFrame.attr("src",response.data[i].embed_url);
-                newFrame.attr("data-state","static");
+                //newFrame.attr("data-state","static");
                 newFrame.attr("height","200px");
                 newFrame.attr("width","200px");
                 newDiv.append("<font>Rating: "+response.data[i].rating+"</font");
@@ -42,20 +39,7 @@
        
       }
 
-      function gifClick()
-      {
-        var ani=$(this).attr("data-animate");
-        var stl=$(this).attr("data-still");
-        var s=$(this).attr("src");
-        if(s===stl)
-        {
-          $(this).attr("src",ani)
-        }
-        else
-        {
-          $(this).attr("src",stl)
-        }
-      }
+      
       // Function for displaying gif data
       function renderButtons() {
 
@@ -84,9 +68,23 @@
         }
       });
 
-      // Adding click event to class "gif"
+      // thif function handles the animation for each gif
+      function gifClick()
+      {
+        var ani=$(this).attr("data-animate");
+        var stl=$(this).attr("data-still");
+        var s=$(this).attr("src");
+        if(s===stl)
+        {
+          $(this).attr("src",ani)
+        }
+        else
+        {
+          $(this).attr("src",stl)
+        }
+      }
+    
       $(document).on("click", ".gif", displaygifInfo);
       $(document).on("click", ".gifItem", gifClick);
-      //$(".gifItem").on("click",gifClick);
-      //to display the innitail array buttons.
+    
       renderButtons();
